@@ -9,10 +9,13 @@ public class APCalendar {
      * isLeapYear(2016) returns True
      */          
     public static boolean isLeapYear(int year) {
-        // implementation not shown
-
-        return false;
+        if(year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)){
+            return true;
         }
+        else{
+            return false;
+        }
+    }
         
     /** Returns the value representing the day of the week 
      * 0 denotes Sunday, 
@@ -21,7 +24,7 @@ public class APCalendar {
      * firstDayOfYear(2019) returns 2 for Tuesday.
     */
     private static int firstDayOfYear(int year) {
-        // implementation not shown
+        
 
         return 0;
         }
