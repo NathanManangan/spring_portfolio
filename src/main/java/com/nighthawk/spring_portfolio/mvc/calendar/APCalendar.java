@@ -26,10 +26,30 @@ public class APCalendar {
      * 6 denotes Saturday. 
      * firstDayOfYear(2019) returns 2 for Tuesday.
     */
-    private static int firstDayOfYear(int year) {
-        
+    public static int firstDayOfYear(int year) {
+        java.util.Date date = new java.util.GregorianCalendar(year, 0, 1).getTime();
+        String datey = date.toString();
+        String dayOfWeek = datey.substring(0,3);
 
-        return 0;
+        switch(dayOfWeek){
+            case "Sun":
+                return 0;
+            case "Mon":
+                return 1;
+            case "Tue":
+                return 2;
+            case "Wed":
+                return 3;
+            case "Thu":
+                return 4;
+            case "Fri":
+                return 5;
+            case "Sat":
+                return 6;
+            default:
+                return -1;
+        }
+
         }
 
 

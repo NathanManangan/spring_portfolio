@@ -8,6 +8,7 @@ package com.nighthawk.spring_portfolio.mvc.calendar;
 class Year {
    private int year;
    private boolean isLeapYear;
+   private int firstDayOfYear;
 
    // zero argument constructor
    public Year() {} 
@@ -19,6 +20,7 @@ class Year {
    public void setYear(int year) {
       this.year = year;
       this.setIsLeapYear(year);
+      this.firstDayOfYear(year);
    }
 
    /* isLeapYear getter/setters */
@@ -32,6 +34,20 @@ class Year {
    /* isLeapYearToString formatted to be mapped to JSON */
    public String isLeapYearToString(){
       return ( "{ \"year\": "  +this.year+  ", " + "\"isLeapYear\": "  +this.isLeapYear+ " }" );
+   }	
+
+
+   /* firstDayOfYear getter/setters */
+   public int firstDayOfYear(int year) {
+      return APCalendar.firstDayOfYear(year);
+   }
+   private void setFirstDayOfYear(int year) {  // this is private to avoid tampering
+      this.firstDayOfYear = APCalendar.firstDayOfYear(year);
+   }
+
+   /* isfirstDayOfYearToString formatted to be mapped to JSON */
+   public String firstDayOfYearToString(){
+      return ( "{ \"year\": "  +this.year+  ", " + "\"First day of year\": "  +this.firstDayOfYear+ " }" );
    }	
 
    /* standard toString placeholder until class is extended */
