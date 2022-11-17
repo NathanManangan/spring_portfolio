@@ -1,7 +1,8 @@
 package com.nighthawk.spring_portfolio.mvc.calendar;
 
 import java.time.LocalDateTime;  
-import java.time.format.DateTimeFormatter;  
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 
 // Prototype Implementation
 
@@ -60,17 +61,10 @@ public class APCalendar {
      * dayOfYear(3, 1, 2016) returns 61, since 2016 is a leap year. 
     */ 
     public static int dayOfYear(int month, int day, int year) {
-        int datenum = 0;
-        for(int i = 0; i > month; i++){
-            if(month % 2 == 0 && (month != 7 || month != 8)){
-                datenum += month * 30;
-                if(isLeapYear(year) && datenum > 60){
-                    datenum += 1;
-                }
-            }
-        }
-
-        return 1;
+        Calendar cal = Calendar.getInstance();
+        cal.set(year, month - 1, day);
+        int date = cal.get(Calendar.DAY_OF_YEAR);
+        return date;
         }
 
     /** Returns the number of leap years between year1 and year2, inclusive.
