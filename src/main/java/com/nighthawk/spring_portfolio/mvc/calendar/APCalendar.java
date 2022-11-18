@@ -71,17 +71,21 @@ public class APCalendar {
      * Precondition: 0 <= year1 <= year2
     */ 
     public static int numberOfLeapYears(int year1, int year2) {
-         // to be implemented in part (a)
+        int leapYearCounter = 0;
+        for (int year = year1; year <= year2; year++) {
+            if (isLeapYear(year)) {
+                leapYearCounter++;
+            }
+        }
 
-        return 0;
+        return leapYearCounter;
         }
 
     /** Returns the value representing the day of the week for the given date
      * Precondition: The date represented by month, day, year is a valid date.
     */
     public static int dayOfWeek(int month, int day, int year) { 
-        // to be implemented in part (b)
-        return 0;
+        return (dayOfYear(month, day, year) - 1 + firstDayOfYear(year)) % 7;
         }
 
     /** Tester method */
