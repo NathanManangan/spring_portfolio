@@ -62,7 +62,7 @@ class Year {
 
    /* isfirstDayOfYearToString formatted to be mapped to JSON */
    public String dayOfYearToString(){
-      return ( "{ \"year\": "  +this.year+  ", " + "\"First day of year\": "  +this.dayOfYear+ " }" );
+      return ( "{ \"year\": "  +this.year+  ", " + "\"month\": "  +this.month+ ", " + "\"day\": "  +this.day+ ", " + "\"Day of year\": "  +this.dayOfYear+ " }" );
    }	
 
    /* standard toString placeholder until class is extended */

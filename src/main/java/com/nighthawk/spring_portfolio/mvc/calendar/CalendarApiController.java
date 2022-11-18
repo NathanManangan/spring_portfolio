@@ -50,7 +50,7 @@ public class CalendarApiController {
     }
 
     @GetMapping("/dayOfYear/{year}")
-    public ResponseEntity<JsonNode> dayOfYear(@PathVariable int year) throws JsonMappingException, JsonProcessingException {  
+    public ResponseEntity<JsonNode> dayOfYear(@PathVariable int month, int day, int year) throws JsonMappingException, JsonProcessingException {  
       // Backend Year Object
       Year year_obj = new Year();
       year_obj.setYear(year);  // evaluates Leap Year
