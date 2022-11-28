@@ -132,8 +132,8 @@ public class Person {
         LocalDate dob = LocalDate.of(2005,11,12);
         Date date = Date.from(dob.atStartOfDay(ZoneId.systemDefault()).toInstant());
         Person noArgsPerson = new Person();
-        Person allArgsPerson = new Person("coolguy@gmail.com","password3!!", 
-        "GuyFieri", date, 69, 167, "male");
+        Person allArgsPerson = new Person("prorichyman@gmail.com","awesomeness", 
+        "Nathan Manangan", date, 5-6, 160, "Male");
         System.out.println(noArgsPerson);
         System.out.println(allArgsPerson);
     }
