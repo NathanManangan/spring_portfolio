@@ -59,7 +59,7 @@ public class CalendarApiController {
     }
 
     @GetMapping("/dayOfYear/{month}/{day}/{year}")
-  public ResponseEntity<JsonNode> getDayOfYear(@PathVariable int month, @PathVariable int day, @PathVariable int year)
+  public ResponseEntity<JsonNode> getDayOfYear(@PathVariable int year, @PathVariable int month, @PathVariable int day)
       throws JsonMappingException, JsonProcessingException {
     // Backend Year Object
     Year year_obj = new Year();
